@@ -30,8 +30,7 @@ namespace RazorPagesMovie.Pages.Movies
                                             orderby m.Genre
                                             select m.Genre;
 
-            var movies = from m in _context.Movie
-                         select m;
+            var movies = _context.Movie.Select(m => m);
 
             if (!String.IsNullOrEmpty(searchString))
             {
